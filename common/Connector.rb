@@ -176,7 +176,6 @@ module Mastercard
       def generate_signature_base_string(url, request_method, oauth_params)
         @signature_base_string =
             CGI.escape(request_method.upcase) << AMP << CGI.escape(normalize_url(url)) << AMP << CGI.escape(normalize_parameters(url, oauth_params))
-        puts @signature_base_string
       end
 =begin
       Method to return "core" URL for signature base string generation.  http://somesite.com:8080?blah becomes http://somesite.com, for example
